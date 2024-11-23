@@ -27,8 +27,8 @@ string solve(string s)
         {
             subwords.emplace(i, s.substr(0, spaces[i]));
         }
-        subwords.emplace(i, s.substr(spaces[i] - spaces[i-1]+1, spaces[i] + spaces[i+1]));
-        cout << spaces[i] << " ";
+        subwords.emplace(i, s.substr(spaces[i] - spaces[i-1]+1, spaces[spaces.size()]-spaces[i] + spaces[i+1]));
+        cout << spaces[i] << " " << endl;
     }
 
     for (auto &[key, value] : subwords)
